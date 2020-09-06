@@ -26,6 +26,6 @@
     "loader-utils": "^1.1.0",
     "null-loader": "^0.1.1",
     "tmp": "0.0.33",
-    "yargs-parser": "^10.0.0"
+    "yargs-parser": "^13.1.2"
   }
 }
