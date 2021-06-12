@@ -120,6 +120,13 @@ class Webpack {
 		directory = makeRelativeToCwd(directory);
 		directory = '${directory}/${file}'.normalize();
 		if (directory.isAbsolute() || directory.startsWith('../')) return directory;
+		
+		#if (haxe_loader_trim_root)
+		// Fix to trim away the source path part of a required file
+		// Example: ./src/index.css becomes ./index.css
+		directory = directory.split('/').slice(1).join('/');
+		#end
+		
 		return './$directory';
 	}
 
